@@ -1,0 +1,291 @@
+/* Resetting default styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #4facfe, #00f2fe); /* Sky-inspired gradient */
+    color:  #06628099;
+    overflow: hidden;
+}
+
+/* Container styling */
+.box {
+    position: relative;
+    text-align: center;
+    width: 340px;
+    padding: 25px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    animation: float 6s ease-in-out infinite;
+    overflow: hidden;
+}
+
+/* Clouds */
+.cloud {
+    position: absolute;
+    width: 80px;
+    height: 40px;
+    background: #ffffff;
+    border-radius: 50px;
+    opacity: 0.8;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    animation: cloudMove 10s linear infinite;
+    z-index: 1;
+}
+
+.cloud::before,
+.cloud::after {
+    content: '';
+    position: absolute;
+    background: #ffffff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.cloud::before {
+    top: -20px;
+    left: 15px;
+}
+
+.cloud::after {
+    top: 0;
+    right: 15px;
+}
+
+/* Positioning Clouds */
+.cloud1 {
+    top: -30px;
+    left: -40px;
+    animation-delay: 0s;
+}
+
+.cloud2 {
+    top: -50px;
+    right: -60px;
+    animation-delay: 3s;
+}
+
+/* Animation for Clouds */
+@keyframes cloudMove {
+    0% {
+        transform: translateX(-20px);
+    }
+    50% {
+        transform: translateX(20px);
+    }
+    100% {
+        transform: translateX(-20px);
+    }
+}
+
+/* Input field */
+.inputData {
+    margin-bottom: 20px;
+}
+
+.inputFeild {
+    width: 90%;
+    padding: 12px 15px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.15);
+    color: #06628099;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.inputFeild:focus {
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Weather information styling */
+.info {
+    margin-top: 20px;
+}
+
+.Location {
+    font-size: 26px;
+    font-weight: bold;
+    color: #06628099;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.tmp {
+    font-size: 42px;
+    font-weight: 600;
+    margin: 15px 0;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+    color:  #06628099;
+}
+
+.tempmin_max {
+    font-size: 18px;
+    color:  #06628099;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Waves for unique effect */
+.wave-one, .wave-two, .wave-three {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 180px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 100%;
+    animation: wave 8s ease-in-out infinite;
+    z-index: -1;
+}
+
+.wave-one {
+    animation-delay: 0s;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.wave-two {
+    animation-delay: 2s;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.wave-three {
+    animation-delay: 4s;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Animations */
+@keyframes wave {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-10%);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Clouds */
+.cloud {
+    position: absolute;
+    width: 120px; /* Increased size for bigger clouds */
+    height: 125px;
+    background: #ffffff;
+    border-radius: 50px;
+    opacity: 0.8;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    animation: cloudMove 50s linear infinite;
+    z-index: 0; /* Ensure it's above the background but outside the box */
+}
+
+.cloud::before,
+.cloud::after {
+    content: '';
+    position: absolute;
+    background: #ffffff;
+    width: 180px;
+    height: 110px;
+    border-radius: 50%;
+}
+
+.cloud::before {
+    top: -20px;
+    left: 20px;
+}
+
+.cloud::after {
+    top: 10px;
+    right: 20px;
+}
+
+/* Positioning Clouds Outside the Box */
+.cloud1 {
+    top: 50px; /* Starts higher */
+    left: 20px; /* Starts off-screen to the left */
+    animation-delay: 0s;
+}
+
+.cloud4 {
+    top: 80px; /* In between positions */
+    left: 20px;
+    animation-delay: 30s; /* Another unique delay */
+}
+
+/* Animation for Random Cloud Movement */
+@keyframes cloudMove {
+    0% {
+        transform: translateX(-50px); /* Start slightly left */
+    }
+    30% {
+        transform: translateX(400px); /* Move slightly right */
+    }
+    70% {
+        transform: translateX(700px); /* Move further right */
+    }
+    100% {
+        transform: translateX(-50px); /* Return to the starting point */
+    }
+}
+
+
+/* Weather Icons Panel */
+.weather-icons {
+    position: relative;
+    display: flex;
+    justify-content: center; /* Centers icons horizontally */
+    align-items: center; /* Centers icons vertically */
+    gap: 20px; /* Space between icons */
+    visibility: visible !important;
+    z-index: 2;
+    padding: 10px; /* Space around icons */
+}
+
+.icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Centers text below the icons */
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.293); /* Darker background with transparency */
+    border-radius: 8px; /* Rounded corners */
+    transition: background 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow to make it pop */
+}
+
+.icon:hover {
+    background: rgba(0, 0, 0, 0.432); /* Darker on hover */
+}
+
+.icon i {
+    font-size: 40px; /* Icon size */
+    color: #fff; /* Light icon color for better visibility */
+}
+
+.icon p {
+    margin-top: 8px;
+    font-size: 16px;
+    color: #fff; /* Text color */
+}
